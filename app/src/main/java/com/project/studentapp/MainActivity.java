@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
     Fragment selecterFragment = null;
+    ImageView chatbot;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +30,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
-
+        chatbot = (ImageView)findViewById(R.id.chatid);
         bottomNavigationView.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
-
+        chatbot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,ChatActivity.class));
+            }
+        });
         Bundle intent = getIntent().getExtras();
         if (intent != null){
             String publisher = intent.getString("publisherid");
@@ -45,6 +53,9 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
+    }
+    public void changeLayout(){
+        startActivity(new Intent(MainActivity.this,ChatActivity.class));
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener =
