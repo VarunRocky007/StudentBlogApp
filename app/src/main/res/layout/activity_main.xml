@@ -6,23 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <FrameLayout
-        android:id="@+id/fragment_container"
-        android:layout_width="403dp"
-        android:layout_height="629dp"
-        android:layout_above="@id/bottom"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
-        app:layout_constraintVertical_bias="1.0">
 
-    </FrameLayout>
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
-        android:layout_width="409dp"
-        android:layout_height="56dp"
+        android:layout_width="422dp"
+        android:layout_height="55dp"
         android:background="?android:attr/windowBackground"
         app:itemIconTint="@color/selector"
         app:labelVisibilityMode="unlabeled"
@@ -34,36 +24,55 @@
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
-    <RelativeLayout
+
+    <LinearLayout
+        android:orientation="vertical"
         android:id="@+id/constraintLayout3"
         android:layout_width="match_parent"
-        android:layout_height="100px"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bottom"
         tools:ignore="MissingConstraints">
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
         <ImageView
             android:id="@+id/imageView5"
-            android:layout_width="500px"
-            android:layout_height="200px"
+            android:layout_width="100sp"
+            android:layout_weight="1"
+            android:layout_height="50sp"
+            android:layout_alignParentEnd="true"
             app:srcCompat="@drawable/student_app" />
 
         <ImageView
             android:id="@+id/chatid"
-            android:layout_width="80px"
-            android:layout_height="80px"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="13dp"
+            android:layout_width="40sp"
+            android:layout_height="40sp"
+            app:srcCompat="@drawable/boticon" />
+    </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
             app:layout_constraintEnd_toEndOf="parent"
-            app:srcCompat="@drawable/boticon"
-            tools:layout_editor_absoluteY="0dp" />
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
 
-    </RelativeLayout>
-
+        </FrameLayout>
+    </LinearLayout>
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/bottom"
-        android:layout_alignParentBottom="true">
+        android:layout_alignParentBottom="true"
+        tools:ignore="MissingConstraints">
 
     </com.google.android.material.appbar.AppBarLayout>
 

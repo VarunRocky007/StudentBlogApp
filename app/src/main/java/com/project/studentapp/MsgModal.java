@@ -1,17 +1,17 @@
 package com.project.studentapp;
 
 public class MsgModal {
-    private String cnt;
+    private String message;
 
     public MsgModal(String cnt) {
-        this.cnt = cnt;
+        this.message = cnt;
     }
 
-    public String getCnt() {
-        return cnt;
+    public String getMessage() {
+        return message;
     }
 
     public void setCnt(String cnt) {
-        this.cnt = cnt;
+        this.message = cnt;
     }
 }

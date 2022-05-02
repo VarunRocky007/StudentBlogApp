@@ -62,8 +62,8 @@ public class ChatActivity extends AppCompatActivity {
     private void getResponse(String message) {
         chatsModalArrayList.add(new Chatsmodal(message,USER_KEY));
         chatAdapter.notifyDataSetChanged();
-        String url = "http://api.brainshop.ai/get?bid=165254&key=drChNkPysXz84e0w&uid=[uid]&msg="+message;
-        String BASE_URL = "http://api.brainshop.ai/";
+        String url = "https://stu-chatbot.herokuapp.com/"+message;
+        String BASE_URL = "https://stu-chatbot.herokuapp.com/";
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -75,7 +75,7 @@ public class ChatActivity extends AppCompatActivity {
             public void onResponse(Call<MsgModal> call, Response<MsgModal> response) {
                 if(response.isSuccessful()){
                     MsgModal msgModal = response.body();
-                    chatsModalArrayList.add(new Chatsmodal(msgModal.getCnt(),BOT_KEY));
+                    chatsModalArrayList.add(new Chatsmodal(msgModal.getMessage(),BOT_KEY));
                     chatAdapter.notifyDataSetChanged();
                     recyclerView.scrollToPosition(chatsModalArrayList.size()-1);
                 }
