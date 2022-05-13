@@ -165,11 +165,12 @@ public class PostActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK){
+        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE){
+            if(resultCode == RESULT_OK){
             CropImage.ActivityResult result = CropImage.getActivityResult(data);
             imageUri = result.getUri();
 
-            image_added.setImageURI(imageUri);
+            image_added.setImageURI(imageUri);}
         } else {
             Toast.makeText(this, "Something went wrong , try again!", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(PostActivity.this , com.project.studentapp.MainActivity.class));

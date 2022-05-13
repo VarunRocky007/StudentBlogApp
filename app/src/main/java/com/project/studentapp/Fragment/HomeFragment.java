@@ -57,7 +57,13 @@ public class HomeFragment extends Fragment {
         postList = new ArrayList<>();
         postAdapter = new PostAdapter(getContext() , postList);
         recyclerView.setAdapter(postAdapter);
-
+        view.findViewById(R.id.chatid).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(),ChatActivity.class);
+                startActivity(intent);
+            }
+        });
 
         progressBar = view.findViewById(R.id.progress_circular);
 

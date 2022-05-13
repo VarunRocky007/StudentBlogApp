@@ -11,8 +11,8 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
-        android:layout_width="422dp"
-        android:layout_height="55dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:background="?android:attr/windowBackground"
         app:itemIconTint="@color/selector"
         app:labelVisibilityMode="unlabeled"
@@ -34,24 +34,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/bottom"
         tools:ignore="MissingConstraints">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="100sp"
-            android:layout_weight="1"
-            android:layout_height="50sp"
-            android:layout_alignParentEnd="true"
-            app:srcCompat="@drawable/student_app" />
 
-        <ImageView
-            android:id="@+id/chatid"
-            android:layout_width="40sp"
-            android:layout_height="40sp"
-            app:srcCompat="@drawable/boticon" />
-    </LinearLayout>
 
         <FrameLayout
             android:id="@+id/fragment_container"

@@ -30,14 +30,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
-        chatbot = (ImageView)findViewById(R.id.chatid);
         bottomNavigationView.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
-        chatbot.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this,ChatActivity.class));
-            }
-        });
         Bundle intent = getIntent().getExtras();
         if (intent != null){
             String publisher = intent.getString("publisherid");
