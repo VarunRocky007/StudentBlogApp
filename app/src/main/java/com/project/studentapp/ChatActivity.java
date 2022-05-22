@@ -39,6 +39,7 @@ public class ChatActivity extends AppCompatActivity {
         editText = findViewById(R.id.edt_msg);
         imageView = findViewById(R.id.send_btn);
         chatsModalArrayList = new ArrayList<>();
+        chatsModalArrayList.add(new Chatsmodal("Hello Student How may I Help You!",BOT_KEY));
         chatAdapter = new ChatAdapter(chatsModalArrayList,this);
         LinearLayoutManager manager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(manager);
